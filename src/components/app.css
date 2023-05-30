@@ -1,0 +1,25 @@
+:root {
+  --dark-bg: #232631;
+  --light-bg: #575c6e;
+  --warn-color: #ffe600;
+  --danger-color: red;
+  --cool-color: #00b7ff;
+  --success-color: #02fa02;
+}
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  /*display flex*/
+  background-color: var(--dark-bg);
+  padding: 20px;
+}
+.wrapper {
+  width: 1200px;
+  background: var(--light-bg);
+  padding: 10px;
+  border-radius: 5px;
+}
