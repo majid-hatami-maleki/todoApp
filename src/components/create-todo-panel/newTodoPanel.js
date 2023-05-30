@@ -1,6 +1,6 @@
 import React from 'react'
 import './newTodoPanel.css'
-function newTodoPanel() {
+function NewTodoPanel() {
     return (
         <div className='newTodoPanel-container'>
             <form onSubmit={(e) => { e.preventDefault() }}>
@@ -10,11 +10,18 @@ function newTodoPanel() {
                 </label>
                 <label>
                     description
-                    <textarea name="new-todo-description-input" id="" cols="30" rows="10"></textarea>
+                    <textarea
+                        name="new-todo-description-input"
+                        id=""
+                        cols="30"
+                        rows="10"
+                        placeholder='write your todo description...'
+                    ></textarea>
                 </label>
+                <input type="submit" />
             </form>
         </div>
     )
 }
 
-export default newTodoPanel
+export default NewTodoPanel

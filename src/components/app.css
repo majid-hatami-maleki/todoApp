@@ -22,4 +22,9 @@
   background: var(--light-bg);
   padding: 10px;
   border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  /*display flex*/
 }
