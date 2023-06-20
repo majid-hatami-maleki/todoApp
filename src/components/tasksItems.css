@@ -1,0 +1,31 @@
+.tasks-list-items {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  /*display flex*/
+}
+.tasks-list-items-texts {
+  width: 80%;
+  border-right: 2px solid black;
+  padding: 10px;
+}
+.tasks-list-items-options {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  /*display flex*/
+  gap: 10px;
+}
+.tasks-list-items-options button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: transparent;
+}
