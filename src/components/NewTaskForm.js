@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import './new-task-form.css'
+import { tasksContext } from '../contexts/tasksContext'
 export default function NewTaskForm() {
+    const fetchTasks = useContext(tasksContext)
     return (
         <>
             <form className='new-task-form'>
