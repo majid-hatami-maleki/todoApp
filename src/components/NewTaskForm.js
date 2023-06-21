@@ -5,19 +5,20 @@ export default function NewTaskForm() {
     const fetchTasks = useContext(tasksContext)
     function submitHandler(e) {
         e.preventDefault()
-        fetchTasks.setNewTask({
+        const newTask = {
             id: `task - ${fetchTasks.allTasks.length + 1}`,
             title: fetchTasks.newTaskTitle,
-            description: fetchTasks.newTaskDescription
-        })
-        fetchTasks.setAllTasks(prevTasks => [...prevTasks, fetchTasks.newTask])
+            description: fetchTasks.newTaskDescription,
+            isDone: false
+        }
+        fetchTasks.setAllTasks(prevTasks => [...prevTasks, newTask])
         fetchTasks.setNewTaskTitle('')
         fetchTasks.setNewTaskDescription('')
-        console.log(fetchTasks.allTasks)
     }
     return (
         <>
-            <form className='new-task-form' onSubmit={submitHandler}>
+            <form className='new-task-form'
+                onSubmit={submitHandler}>
                 <input
                     type="text"
                     placeholder='title...'

@@ -7,7 +7,6 @@ function TasksContextProvider({ children }) {
     const [allTasks, setAllTasks] = useState([])
     const [newTaskTitle, setNewTaskTitle] = useState('')
     const [newTaskDescription, setNewTaskDescription] = useState('')
-    const [newTask, setNewTask] = useState({})
     return (
         <tasksContext.Provider value={{
             allTasks,
@@ -16,8 +15,6 @@ function TasksContextProvider({ children }) {
             setNewTaskTitle,
             newTaskDescription,
             setNewTaskDescription,
-            newTask,
-            setNewTask
         }}>
             {children}
         </tasksContext.Provider>
