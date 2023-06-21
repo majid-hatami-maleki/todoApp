@@ -1,16 +1,24 @@
 .tasks-list-items {
   width: 100%;
-  background-color: white;
+  background-color: #1d1d1d;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   /*display flex*/
+  border-radius: 5px;
 }
 .tasks-list-items-texts {
   width: 80%;
   border-right: 2px solid black;
   padding: 10px;
+}
+.tasks-list-items-texts h2 {
+  text-transform: capitalize;
+  color: rgb(196, 195, 195);
+}
+.tasks-list-items-texts p {
+  color: white;
 }
 .tasks-list-items-options {
   width: 20%;
@@ -21,11 +29,6 @@
   /*display flex*/
   gap: 10px;
 }
+
 .tasks-list-items-options button {
-  background-color: black;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: transparent;
 }

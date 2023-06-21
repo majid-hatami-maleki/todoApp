@@ -3,8 +3,11 @@ import './new-task-form.css'
 import { tasksContext } from '../contexts/tasksContext'
 export default function NewTaskForm() {
     const fetchTasks = useContext(tasksContext)
-    function submitHandler(e) {
+    function submitForm(e) {
         e.preventDefault()
+
+    }
+    function submitHandler() {
         const newTask = {
             id: `task - ${fetchTasks.allTasks.length + 1}`,
             title: fetchTasks.newTaskTitle,
@@ -18,7 +21,11 @@ export default function NewTaskForm() {
     return (
         <>
             <form className='new-task-form'
-                onSubmit={submitHandler}>
+                onSubmit={submitForm}
+                onKeyDown={(e) => {
+                    if (e.keyCode === 13) submitHandler()
+                }}
+            >
                 <input
                     type="text"
                     placeholder='title...'
@@ -32,7 +39,8 @@ export default function NewTaskForm() {
                     value={fetchTasks.newTaskDescription}
                     onChange={(e) => fetchTasks.setNewTaskDescription(e.target.value)}
                 ></textarea>
-                <input type="submit" />
+                <input type="submit"
+                    onClick={submitHandler} />
             </form>
         </>
     )

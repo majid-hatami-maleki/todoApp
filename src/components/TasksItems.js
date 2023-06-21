@@ -1,6 +1,7 @@
 import React from 'react'
 import './tasksItems.css'
 import { MdDeleteOutline, MdDone } from 'react-icons/md'
+import AnimatedBtns from './AnimatedBtns'
 export default function TasksItems(props) {
     const { title, description } = props
     return (
@@ -11,14 +12,8 @@ export default function TasksItems(props) {
                     <p>{description}</p>
                 </div>
                 <div className="tasks-list-items-options">
-                    <button
-                        title='remove'>
-                        <MdDeleteOutline />
-                    </button>
-                    <button
-                        title='done'>
-                        <MdDone />
-                    </button>
+                    <AnimatedBtns title={'done'} icon={<MdDone />} />
+                    <AnimatedBtns title={'remove'} icon={<MdDeleteOutline />} />
                 </div>
             </li>
         </>
