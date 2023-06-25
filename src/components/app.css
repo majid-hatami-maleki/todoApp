@@ -51,6 +51,21 @@
   align-items: center;
   flex-direction: column;
   /*display flex*/
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.display::-webkit-scrollbar {
+  width: 5px;
+}
+.display::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+}
+.display::-webkit-scrollbar-thumb {
+  background: #a5a4a4;
+  box-shadow: inset 0 0 2px 0px rgb(0, 0, 0);
+}
+.display::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 217, 0);
 }
 .tasks-list {
   width: 100%;
