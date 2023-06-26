@@ -6,7 +6,8 @@ export default function AnimatedBtns({ icon, title, func }) {
         <>
             <button
                 onClick={func}
-                title={title}>
+                title={title}
+            >
                 {icon}
             </button>
         </>

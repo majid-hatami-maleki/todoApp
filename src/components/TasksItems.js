@@ -9,22 +9,28 @@ export default function TasksItems(props) {
     const contextData = useContext(tasksContext)
     return (
         <>
-            <li className='tasks-list-items'>
+            <li className='active-tasks-list-items'>
+
                 <div className="tasks-list-items-texts">
+
                     <h2>{title}</h2>
                     <p>{description}</p>
-                </div>
-                <div className="tasks-list-items-options">
-                    <AnimatedBtns
-                        title={'done'}
-                        icon={<MdDone />}
 
-                    />
+                </div>
+
+                <div className="tasks-list-items-options">
+
                     <AnimatedBtns
                         title={'remove'}
                         icon={<MdDeleteOutline />}
                         func={() => { contextData.removeTaskHandler(id) }}
                     />
+
+                    <AnimatedBtns
+                        title={'done'}
+                        icon={<MdDone />}
+                    />
+
                 </div>
             </li>
         </>
