@@ -1,0 +1,34 @@
+:root {
+  --primary-bg: #292d3e;
+  --secondary-bg: #31364a;
+  --primary-border: #77808b;
+  --purple-col: #c792ea;
+  --warn-col: #f29b3c;
+  --cold-col: #89ddf3;
+  --coldest-col: #209fe0;
+  --danger-col: #ff454f;
+}
+@font-face {
+  font-family: bold-titles;
+  src: url(../../public/fonts/RobotoSlab-Black.ttf);
+}
+@font-face {
+  font-family: regular-titles;
+  src: url(../../public/fonts/RobotoSlab-Regular.ttf);
+}
+@font-face {
+  font-family: light-pars;
+  src: url(../../public/fonts/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: regular-pars;
+  src: url(../../public/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: normal-button;
+  src: url(../../public/fonts/Ubuntu-Bold.ttf);
+}
+@font-face {
+  font-family: regular-button;
+  src: url(../../public/fonts/Ubuntu-Light.ttf);
+}
