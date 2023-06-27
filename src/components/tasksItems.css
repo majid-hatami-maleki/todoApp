@@ -1,7 +1,46 @@
-h2 {
-  font-family: regular-titles;
-  text-transform: uppercase;
+.active-tasks-list-items {
+  background-color: var(--secondary-bg);
+  border: 2px solid transparent;
+  cursor: pointer;
+  opacity: 0.8;
+  transform: scale(1);
+  transition: all 0.3s ease-out;
 }
-p {
-  font-family: regular-pars;
+.active-tasks-list-items:hover {
+  opacity: 1;
+  transform: scale(1);
+}
+.active-tasks-list-items .tasks-list-items-texts {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  /*display flex*/
+  border-right: 1px solid var(--primary-bg);
+  transition: all 0.4s ease-in;
+  padding: 10px;
+}
+
+.active-tasks-list-items:hover .tasks-list-items-texts {
+  border-right-color: var(--warn-col);
+}
+.active-tasks-list-items .tasks-list-items-options {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  /*display flex*/
+  gap: 10px;
+}
+.active-tasks-list-items h2 {
+  font-family: bold-titles;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--warn-col);
+}
+.active-tasks-list-items p {
+  font-family: light-pars;
+  color: var(--coldest-col);
 }
