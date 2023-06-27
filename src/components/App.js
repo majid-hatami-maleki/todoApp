@@ -9,6 +9,7 @@ export default function App() {
     return (
         <div className='app-container'>
             <div className="app">
+                <h1 className="app-title">todo app</h1>
                 <div className="display">
                     <ul className='tasks-list'>
                         {fetchTasks.allTasks.map(task => (
