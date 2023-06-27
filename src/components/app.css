@@ -49,11 +49,12 @@
   height: 80%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   /*display flex*/
   border: 1px solid var(--primary-border);
   position: relative;
+  padding: 10px;
 }
 
 .app-title {
@@ -69,4 +70,19 @@
   border-radius: 0px 30px 0px 0px;
   color: var(--purple-col);
   border-bottom-color: transparent;
+}
+.app :is(.new-task-panel, .display) {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  /*display flex*/
+}
+.display {
+  width: 70%;
+}
+.new-task-panel {
+  width: 30%;
+  border-left: 1px solid var(--primary-border);
 }
