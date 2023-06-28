@@ -1,8 +1,9 @@
+/* active tasks */
 .active-tasks-list-items {
   background-color: var(--secondary-bg);
   border: 2px solid transparent;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.5;
   transform: scale(1);
   transition: all 0.3s ease-out;
 }
@@ -18,7 +19,7 @@
   flex-direction: column;
   /*display flex*/
   border-right: 1px solid var(--primary-bg);
-  transition: all 0.4s ease-in;
+  transition: all 0.3s ease-in;
   padding: 10px;
 }
 
@@ -43,4 +44,62 @@
 .active-tasks-list-items p {
   font-family: light-pars;
   color: var(--coldest-col);
+}
+
+/* 
+de active tasks 
+*/
+
+.deActive-tasks-list-items {
+  background-color: var(--primary-bg);
+  border: 2px solid var(--secondary-bg);
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.3s ease-out;
+}
+.deActive-tasks-list-items .tasks-list-items-texts {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  /*display flex*/
+  border-right: 1px solid var(--primary-bg);
+  transition: all 0.3s ease-in;
+  padding: 10px;
+}
+
+.deActive-tasks-list-items .tasks-list-items-options {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  /*display flex*/
+  gap: 10px;
+}
+.deActive-tasks-list-items h2 {
+  font-family: bold-titles;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary-border);
+}
+.deActive-tasks-list-items :is(h2, p) {
+  position: relative;
+}
+.deActive-tasks-list-items :is(h2, p):after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  padding: 1px;
+  background-color: var(--primary-border);
+  left: 0;
+  top: 50%;
+}
+.deActive-tasks-list-items p {
+  font-family: light-pars;
+  color: var(--primary-border);
+}
+.deActive-tasks-list-items button[title="done"] {
+  color: rgb(72, 255, 0);
 }

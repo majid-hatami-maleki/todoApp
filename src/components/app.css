@@ -96,6 +96,7 @@
   flex-direction: column;
   /*display flex*/
   gap: 5px;
+  padding: 0 10px;
 }
 .tasks-list li {
   width: 100%;
