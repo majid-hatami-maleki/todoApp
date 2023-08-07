@@ -27,7 +27,7 @@
 .todo-app-display{
     width: 600px;
     height: 600px;
-    border: 4px solid #0f0d11;
+    background-color: #0f0d11;
     border-radius: 5px;
     padding: 10px;
 }
@@ -38,7 +38,7 @@
     align-items: center;
     flex-direction: row;
     /*display flex*/
-    background-color: #0f0d11;
+    background-color: #1f1c24;
     padding: 10px;
     border-radius: 5px;
     color: #eab9fd;

@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './app.css'
 import {MdDone , MdOutlineRemove , MdModeEdit} from 'react-icons/md'
 export default function App() {
+    const [inputValue , setInputValue] = useState('')
+    const [allTodosArray, setAllTodosArray] = useState([])
+    const newObj = new Object()
   return (
     <div className='app-container'>
         <h1 className='app-title'>TODO APP</h1>
@@ -17,8 +20,11 @@ export default function App() {
                 </li>
             </ul>
             <div className="create-todo-panel">
-                <input type="text" />
-                <button>add</button>
+                <input type="text" value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}}/>
+                <button onClick={()=>{
+                    newObj.id = allTodosArray.length + 1
+                    newObj.value = inputValue
+                }}>add</button>
             </div>
         </div>
     </div>
