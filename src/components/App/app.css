@@ -30,6 +30,12 @@
     background-color: #0f0d11;
     border-radius: 5px;
     padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    /*display flex*/
+    gap: 5px;
 }
 .todo-app-display li{
     width: 100%;
