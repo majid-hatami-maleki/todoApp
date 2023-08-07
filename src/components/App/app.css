@@ -8,7 +8,54 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     /*display flex*/
     background-color: #1f1c24;
+    gap: 20px;
+}
+.app-title{
+    color: #ab62ff;
+}
+.todo-app-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*display flex*/
+    gap: 10px;
+}
+.todo-app-container ul{
+    width: 600px;
+    height: 600px;
+    border: 4px solid #0f0d11;
+    border-radius: 5px;
+}
+.create-todo-panel{
+    width: 100%;
+    position: relative;
+}
+.create-todo-panel input{
+    width: 100%;
+    padding: 10px 60PX 10PX 10PX;
+    border-radius: 5px;
+    background-color: #0f0d11;
+    border: 1px solid transparent;
+    color: #eab9fd;
+    font-size: 1.2rem;
+}
+.create-todo-panel input:focus{
+    outline: transparent;
+}
+.create-todo-panel button{
+    position: absolute;
+    right:5px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: #eab9fd;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-left-color: #ab62ff;
 }
