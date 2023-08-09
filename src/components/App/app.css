@@ -3,6 +3,7 @@
     --secondaryColor : #0f0d11;
     --violetColor : #ab62ff;
     --pinkColor : #eab9fd;
+    --muteColors : #2d2b31;
 }
 .app-container{
     width: 100vw;
@@ -41,7 +42,7 @@
     overflow-y: auto;
     box-shadow: inset 0px 0px 5px 2px black;
 }
-.todo-app-display li{
+.active-todo-lis{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -53,12 +54,12 @@
     border-radius: 5px;
     color: var(--pinkColor);
 }
-.todo-app-display li p{
+.active-todo-lis p{
     width: 82%;
     border-right: 1px solid var(--violetColor);
     padding: 0 5px;
 }
-.todo-item-options{
+.active-todo-lis .todo-item-options{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,7 +67,7 @@
     /*display flex*/
     gap: 5px;
 }
-.todo-item-options button{
+.active-todo-lis .todo-item-options button{
     padding: 5px;
     border-radius: 50%;
     text-align: center;
@@ -75,9 +76,37 @@
     background-color: var(--secondaryColor);
     color: var(--violetColor);
 }
-.todo-item-options button:hover{
+.active-todo-lis .todo-item-options button:hover{
     color: var(--pinkColor);
 
+}
+.deActive-todo-lis{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    /*display flex*/
+    background-color: var(--primaryColor);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--muteColors);
+}
+.deActive-todo-lis p{
+    color: var(--muteColors);
+}
+.deActive-todo-lis .todo-item-options button{
+    padding: 5px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 10px;
+    cursor: pointer;
+    background-color: var(--primaryColor);
+    color: var(--muteColors);
+    border: 1px solid var(--secondaryColor);
+}
+.deActive-todo-lis button:nth-child(2){
+    color: greenyellow;
 }
 .create-todo-panel{
     width: 100%;

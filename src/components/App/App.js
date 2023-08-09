@@ -5,9 +5,10 @@ export default function App() {
     const [inputValue, setInputValue] = useState('')
     const [allTodosArray, setAllTodosArray] = useState([])
     const todoClickHandler = (e) => {
-        const newObj = new Object()
+        const newObj = {}
         newObj.id = allTodosArray.length + 1
         newObj.value = inputValue
+        newObj.class = 'active-todo-lis'
         setAllTodosArray(prevState => {
             return [...prevState, newObj]
         })
@@ -17,6 +18,12 @@ export default function App() {
         const filteredItem = allTodosArray.filter((todo)=> todo.id !== item.id)     
         setAllTodosArray([...filteredItem])
     }
+    const doneTodoHandler = (item)=>{
+        let copyArray = allTodosArray
+        const foundItem = copyArray.find((todo)=> item.id === todo.id)
+        foundItem.class = 'deActive-todo-lis'
+        setAllTodosArray([...copyArray])
+    }
     return (
         <div className='app-container'>
             <h1 className='app-title'>TODO APP</h1>
@@ -24,7 +31,7 @@ export default function App() {
                 <ul className='todo-app-display'>
                     {useMemo(() => {
                         return allTodosArray.map((todo) => {
-                            return <li key={todo.id}>
+                            return <li key={todo.id} className={`${todo.class}`}>
                                 <p>{todo.value}</p>
                                 <div className="todo-item-options">
                                     <button
@@ -33,7 +40,10 @@ export default function App() {
                                     >
                                         <MdOutlineRemove />
                                     </button>
-                                    <button title='Done'><MdDone /></button>
+                                    <button 
+                                    title='Done'
+                                    onClick={()=>{doneTodoHandler(todo)}}
+                                     ><MdDone /></button>
                                     <button title='Edit'><MdModeEdit /></button>
                                 </div>
                             </li>
