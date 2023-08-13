@@ -4,7 +4,8 @@ import { MdDone, MdOutlineRemove, MdModeEdit } from 'react-icons/md'
 export default function App() {
     const [inputValue, setInputValue] = useState('')
     const [allTodosArray, setAllTodosArray] = useState([])
-    const todoClickHandler = (e) => {
+    const [isEditMode, setIsEditMode] = useState(false)
+    const addTodoClickHandler = (e) => {
         const newObj = {}
         newObj.id = allTodosArray.length + 1
         newObj.value = inputValue
@@ -14,13 +15,21 @@ export default function App() {
         })
         setInputValue('')
     }
-    const removeTodoHandler = (item)=>{
-        const filteredItem = allTodosArray.filter((todo)=> todo.id !== item.id)     
+    const doneEditHandler = () => {
+
+    }
+    const editTodoHandler = (item) => {
+        setIsEditMode(true)
+        setInputValue(item.value)
+
+    }
+    const removeTodoHandler = (item) => {
+        const filteredItem = allTodosArray.filter((todo) => todo.id !== item.id)
         setAllTodosArray([...filteredItem])
     }
-    const doneTodoHandler = (item)=>{
+    const doneTodoHandler = (item) => {
         let copyArray = allTodosArray
-        const foundItem = copyArray.find((todo)=> item.id === todo.id)
+        const foundItem = copyArray.find((todo) => item.id === todo.id)
         foundItem.class = 'deActive-todo-lis'
         setAllTodosArray([...copyArray])
     }
@@ -36,15 +45,15 @@ export default function App() {
                                 <div className="todo-item-options">
                                     <button
                                         title='remove'
-                                        onClick={()=>{removeTodoHandler(todo)}}
+                                        onClick={() => { removeTodoHandler(todo) }}
                                     >
                                         <MdOutlineRemove />
                                     </button>
-                                    <button 
-                                    title='Done'
-                                    onClick={()=>{doneTodoHandler(todo)}}
-                                     ><MdDone /></button>
-                                    <button title='Edit'><MdModeEdit /></button>
+                                    <button
+                                        title='Done'
+                                        onClick={() => { doneTodoHandler(todo) }}
+                                    ><MdDone /></button>
+                                    <button title='Edit' onClick={()=>editTodoHandler(todo)}><MdModeEdit /></button>
                                 </div>
                             </li>
                         })
@@ -54,12 +63,21 @@ export default function App() {
                     <input type="text" value={inputValue}
                         onChange={(e) => { setInputValue(e.target.value) }}
                         onKeyDown={(e) => {
-                            if (e.code === 'Enter') todoClickHandler()
+                            if (e.code === 'Enter') addTodoClickHandler()
                         }}
                     />
-                    <button
-                        onClick={(e) => { todoClickHandler() }}
-                    >add</button>
+                    {
+                        !isEditMode ? (
+                            <button
+                                onClick={(e) => { addTodoClickHandler() }}
+                            >add</button>
+                        ) : (
+                            <button
+                                onClick={(e) => { doneEditHandler() }}
+                            >DONE</button>
+                        )
+                    }
+
                 </div>
             </div>
         </div>
